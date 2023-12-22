@@ -1,8 +1,8 @@
 # Website : Task Management
 
-Client Live Link : https://insightmint.web.app
+<!-- Client Live Link : https://insightmint.web.app -->
 
-Server Live Link : https://insight-mint-server.vercel.app
+<!-- Server Live Link : https://insight-mint-server.vercel.app -->
 
 ## Objective
 Create a responsive and visually appealing collaborative Task management platform using React.js focusing on frontend development. The platform aims to enhance and improve task management.
