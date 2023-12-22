@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
@@ -58,9 +58,9 @@ const DashboardLayout = () => {
 
                     <div className="flex flex-col justify-between flex-1 mt-6">
                       <nav>
-                        <a
+                        <Link
                           className="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-200"
-                          href="#"
+                          to="/dashboard"
                         >
                           <svg
                             className="w-5 h-5"
@@ -78,12 +78,9 @@ const DashboardLayout = () => {
                           </svg>
 
                           <span className="mx-4 font-medium">Dashboard</span>
-                        </a>
+                        </Link>
 
-                        <a
-                          className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                          href="#"
-                        >
+                        <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                           <svg
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
@@ -107,12 +104,9 @@ const DashboardLayout = () => {
                           </svg>
 
                           <span className="mx-4 font-medium">Accounts</span>
-                        </a>
+                        </Link>
 
-                        <a
-                          className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                          href="#"
-                        >
+                        <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                           <svg
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
@@ -129,12 +123,9 @@ const DashboardLayout = () => {
                           </svg>
 
                           <span className="mx-4 font-medium">Tickets</span>
-                        </a>
+                        </Link>
 
-                        <a
-                          className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                          href="#"
-                        >
+                        <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                           <svg
                             className="w-5 h-5"
                             viewBox="0 0 24 24"
@@ -158,14 +149,14 @@ const DashboardLayout = () => {
                           </svg>
 
                           <span className="mx-4 font-medium">Settings</span>
-                        </a>
+                        </Link>
                       </nav>
                     </div>
                   </aside>
                 </div>
               </div>
             </div>
-            <aside className="hidden md:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-gray-200 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
+            <aside className="hidden md:flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto bg-gray-200 border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 rounded-xl">
               <div className="flex flex-col items-center mt-6 -mx-2">
                 <img
                   className="object-cover w-24 h-24 mx-2 rounded-full"
@@ -182,9 +173,9 @@ const DashboardLayout = () => {
 
               <div className="flex flex-col justify-between flex-1 mt-6">
                 <nav>
-                  <a
+                  <Link
                     className="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-200"
-                    href="#"
+                    to="/dashboard"
                   >
                     <svg
                       className="w-5 h-5"
@@ -202,12 +193,9 @@ const DashboardLayout = () => {
                     </svg>
 
                     <span className="mx-4 font-medium">Dashboard</span>
-                  </a>
+                  </Link>
 
-                  <a
-                    className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                    href="#"
-                  >
+                  <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                     <svg
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
@@ -231,12 +219,9 @@ const DashboardLayout = () => {
                     </svg>
 
                     <span className="mx-4 font-medium">Accounts</span>
-                  </a>
+                  </Link>
 
-                  <a
-                    className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                    href="#"
-                  >
+                  <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                     <svg
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
@@ -253,12 +238,9 @@ const DashboardLayout = () => {
                     </svg>
 
                     <span className="mx-4 font-medium">Tickets</span>
-                  </a>
+                  </Link>
 
-                  <a
-                    className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
-                    href="#"
-                  >
+                  <Link className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                     <svg
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
@@ -282,7 +264,7 @@ const DashboardLayout = () => {
                     </svg>
 
                     <span className="mx-4 font-medium">Settings</span>
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </aside>

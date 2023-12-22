@@ -2,15 +2,20 @@ import { GoTasklist, } from "react-icons/go";
 import { FaTasks } from "react-icons/fa";
 import { MdOutlineDeleteSweep } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import useAOS from "../../../hooks/useAOS";
 
 
 const Features = () => {
+  useAOS()
   return (
     <>
-      <section className="dark:bg-gray-900">
+      <section data-aos="fade-up" className="dark:bg-gray-900">
         <div className="container px-5 py-10 mx-auto">
           <div className="py-10">
-            <h2 className="text-2xl text-center font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
+            <h2
+              data-aos="fade-up"
+              className="text-2xl text-center font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white"
+            >
               explore our <br /> awesome{" "}
               <span className="text-blue-500">Features</span>
             </h2>
@@ -30,7 +35,10 @@ const Features = () => {
           ></iframe> */}
 
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2">
-            <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+            <div
+              data-aos="fade-up"
+              className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+            >
               <div className="md:flex md:items-start md:-mx-4">
                 <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                   <GoTasklist />
@@ -50,7 +58,10 @@ const Features = () => {
               </div>
             </div>
 
-            <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+            <div
+              data-aos="fade-up"
+              className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+            >
               <div className="md:flex md:items-start md:-mx-4">
                 <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                   <FaTasks />
@@ -70,7 +81,10 @@ const Features = () => {
               </div>
             </div>
 
-            <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+            <div
+              data-aos="fade-up"
+              className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+            >
               <div className="md:flex md:items-start md:-mx-4">
                 <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                   <MdOutlineDeleteSweep />
@@ -90,7 +104,10 @@ const Features = () => {
               </div>
             </div>
 
-            <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+            <div
+              data-aos="fade-up"
+              className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+            >
               <div className="md:flex md:items-start md:-mx-4">
                 <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                   <IoMdNotificationsOutline />

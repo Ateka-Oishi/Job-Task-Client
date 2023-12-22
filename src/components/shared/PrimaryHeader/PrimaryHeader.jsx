@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const PrimaryHeader = () => {
@@ -11,7 +11,9 @@ const PrimaryHeader = () => {
         <div className="drawer-content flex flex-col">
           <div className="w-full navbar">
             <div className="flex-1 px-2 mx-2">
-              <span className="font-semibold text-xl">Task M.</span>
+              <Link to="/">
+                <span className="font-semibold text-xl">Task M.</span>
+              </Link>
             </div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal gap-3">
@@ -41,6 +43,20 @@ const PrimaryHeader = () => {
                     to="/services"
                   >
                     Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "!btn !btn-sm !btn-neutral"
+                        : "!btn !btn-sm !btn-outline"
+                    }
+                    to="/blog"
+                  >
+                    Latest Blog
                   </NavLink>
                 </li>
                 {user ? (
@@ -127,12 +143,34 @@ const PrimaryHeader = () => {
             <li>
               <NavLink to="/services">Services</NavLink>
             </li>
+
             <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/blog">Latest Blog</NavLink>
             </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
+            {user ? (
+              <li>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+            ) : (
+              ""
+            )}
+
+            {user ? (
+              <li>
+                <span
+                  onClick={logOutUser}
+                  className="!btn !btn-sm !btn-outline"
+                >
+                  Logout
+                </span>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <NavLink to="/login">Login</NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>

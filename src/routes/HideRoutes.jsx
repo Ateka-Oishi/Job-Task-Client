@@ -6,11 +6,7 @@ export const HideAuthRoutes = ({ children }) => {
   const location = useLocation();
 
   if (authLoading) {
-    return (
-      <div className="flex items-center justify-center py-20">
-        <span className="loading loading-spinner w-52 h-56"></span>
-      </div>
-    );
+    return children;
   }
 
   if (user) {

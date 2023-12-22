@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { Link, Navigate } from "react-router-dom";
+import moment from "moment";
 
 const ListTasks = ({ tasks, setTasks, todoDataRefetch }) => {
   const [todos, setTodos] = useState([]);
@@ -126,6 +128,36 @@ const Header = ({ text, bg, count }) => {
 };
 
 const Task = ({ task, todoDataRefetch }) => {
+  const [countdown, setCountdown] = useState("");
+
+  console.log(task?.deadline);
+
+  useEffect(() => {
+    console.log(task?.deadline);
+    const intervalId = setInterval(() => {
+      const targetDate = moment(task?.deadline);
+      const now = moment();
+      const duration = moment.duration(targetDate.diff(now));
+
+      if (duration.asMilliseconds() <= 0) {
+        clearInterval(intervalId);
+        setCountdown("Expired");
+      } else {
+        setCountdown(formatDuration(duration));
+      }
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [task?.deadline]);
+
+  const formatDuration = (duration) => {
+    const days = duration.days();
+    const hours = duration.hours();
+    const minutes = duration.minutes();
+    const seconds = duration.seconds();
+
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "task",
     item: { id: task._id },
@@ -148,10 +180,23 @@ const Task = ({ task, todoDataRefetch }) => {
 
   return (
     <>
-      <div ref={drag} tabIndex={0} className="collapse bg-base-200 relative">
-        <div className="collapse-title text-sm font-medium">{task?.name} </div>
-        <div className="collapse-content">
-          <p className="text-sm">
+      <div
+        ref={drag}
+        tabIndex={0}
+        className={`${
+          task?.priority === "low"
+            ? "bg-amber-100"
+            : task?.priority === "moderate"
+            ? "bg-amber-200"
+            : task?.priority === "high"
+            ? "bg-amber-300"
+            : ""
+        } collapse relative text-black`}
+      >
+        <div className="collapse-title font-bold">{task?.name} </div>
+        <div className="collapse-content -mt-3">
+          <span className="font-semibold text-sm">Deadline : {countdown}</span>
+          <p className="text-sm mt-3">
             {task?.description.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
@@ -163,7 +208,8 @@ const Task = ({ task, todoDataRefetch }) => {
         <button
           type="submit"
           onClick={() => handleRemoveTask(task._id)}
-          className="absolute right-2 bottom-2 btn btn-outline btn-xs btn-circle"
+          className="absolute right-2 bottom-2 tooltip tooltip-left border border-blue-950 rounded-full"
+          data-tip="Delete"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -171,11 +217,34 @@ const Task = ({ task, todoDataRefetch }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-4 h-4"
+            className="w-5 h-5"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
           </svg>
         </button>
+
+        <Link to={`/dashboard/update/${task?._id}`}>
+          <button
+            type="submit"
+            className="absolute right-10 bottom-2 tooltip tooltip-left"
+            data-tip="Edit"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+              />
+            </svg>
+          </button>
+        </Link>
       </div>
     </>
   );

@@ -4,6 +4,7 @@ import ListTasks from "../../../components/ui/ListTasks/ListTasks";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import useTodoData from "../../../hooks/useTodoData";
+import PageTitle from "../../../components/PageTitle/PageTitile";
 
 const DashboardHome = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,6 +12,7 @@ const DashboardHome = () => {
   
   return (
     <section>
+      <PageTitle title={"Dashboard"}/>
       <DndProvider backend={HTML5Backend}>
         <div className="">
           <CreateTask todoDataRefetch={todoDataRefetch} />

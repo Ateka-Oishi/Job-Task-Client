@@ -1,12 +1,21 @@
+import useAOS from "../../../hooks/useAOS";
+
 const AboutUs = () => {
+  useAOS()
     return (
       <>
-        <section className="bg-base-200 dark:bg-gray-900 border-b">
+        <section
+          data-aos="fade-up"
+          className="bg-base-200 dark:bg-gray-900 border-b"
+        >
           <div className="container px-5 py-10 mx-auto">
             <div className="lg:flex lg:items-center">
               <div className="w-full space-y-12 lg:w-1/2 ">
                 <div>
-                  <h2 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
+                  <h2
+                    data-aos="fade-up"
+                    className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white"
+                  >
                     explore our <br /> Task Management
                   </h2>
 
@@ -17,7 +26,10 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                <div className="md:flex md:items-start md:-mx-4">
+                <div
+                  data-aos="fade-left"
+                  className="md:flex md:items-start md:-mx-4"
+                >
                   <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +61,10 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                <div className="md:flex md:items-start md:-mx-4">
+                <div
+                  data-aos="fade-right"
+                  className="md:flex md:items-start md:-mx-4"
+                >
                   <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +104,10 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center">
+              <div
+                data-aos="fade-in"
+                className="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center"
+              >
                 <img
                   className="w-[28rem] h-[28rem] object-cover xl:w-[34rem] xl:h-[34rem] rounded-full"
                   src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80"

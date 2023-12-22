@@ -8,6 +8,8 @@ import DashboardHome from "../pages/Dashboard/DashHome/DashboardHome";
 import Services from "../pages/Services/Services";
 import PrivateRoutes from "./PrivateRoutes";
 import { HideAuthRoutes } from "./HideRoutes";
+import DashTaskEdit from "../pages/Dashboard/DashTaskEdit/DashTaskEdit";
+import Blog from "../pages/Blog/Blog";
 
 const PublicRoutes = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const PublicRoutes = createBrowserRouter([
       {
         path: "services",
         element: <Services />,
+      },
+      {
+        path: "blog",
+        element: <Blog />,
       },
       {
         path: "login",
@@ -49,6 +55,10 @@ const PublicRoutes = createBrowserRouter([
           {
             index: true,
             element: <DashboardHome />,
+          },
+          {
+            path: "update/:id",
+            element: <DashTaskEdit />,
           },
         ],
       },

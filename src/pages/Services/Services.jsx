@@ -2,10 +2,14 @@ import { GoTasklist } from "react-icons/go";
 import { FaTasks } from "react-icons/fa";
 import { MdOutlineDeleteSweep } from "react-icons/md";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import PageTitle from "../../components/PageTitle/PageTitile";
+import useAOS from "../../hooks/useAOS";
 
 const Services = () => {
+  useAOS()
   return (
-    <section>
+    <section data-aos="fade-up">
+      <PageTitle title="Services" />
       <div className="container mx-auto px-5 py-16">
         <div className="py-10">
           <h2 className="text-2xl text-center font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">
@@ -19,16 +23,20 @@ const Services = () => {
           </div>
         </div>
 
-        {/* <iframe
-            className="min-w-full mt-12 h-64 md:h-[450px] rounded-xl overflow-hidden"
-            src="https://vimeo.com/showcase/7060635/video/525707984/embed"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen=""
-          ></iframe> */}
+        <iframe
+          data-aos="fade-in"
+          className="min-w-full mt-12 h-64 md:h-[450px] rounded-xl overflow-hidden"
+          src="https://vimeo.com/showcase/7060635/video/525707984/embed"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen=""
+        ></iframe>
 
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2">
-          <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+          <div
+            data-aos="fade-up"
+            className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+          >
             <div className="md:flex md:items-start md:-mx-4">
               <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                 <GoTasklist />
@@ -48,7 +56,10 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+          <div
+            data-aos="fade-up"
+            className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+          >
             <div className="md:flex md:items-start md:-mx-4">
               <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                 <FaTasks />
@@ -68,7 +79,10 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+          <div
+            data-aos="fade-up"
+            className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+          >
             <div className="md:flex md:items-start md:-mx-4">
               <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                 <MdOutlineDeleteSweep />
@@ -88,7 +102,10 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700">
+          <div
+            data-aos="fade-up"
+            className="p-6 border rounded-xl border-r-gray-200 dark:border-gray-700"
+          >
             <div className="md:flex md:items-start md:-mx-4">
               <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
                 <IoMdNotificationsOutline />

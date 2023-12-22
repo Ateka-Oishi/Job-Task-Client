@@ -1,10 +1,13 @@
 # Website : Task Management
 
+Client Live Link : https://todoist-3862f.web.app
+
+Server Live Link : https://todoist-server.vercel.app
+
 ## Objective
 Create a responsive and visually appealing collaborative Task management platform using React.js focusing on frontend development. The platform aims to enhance and improve task management.
 
 
-## Q&A Sections
 ### Features :
 
 - Firebase Authentication.
@@ -15,7 +18,7 @@ Create a responsive and visually appealing collaborative Task management platfor
 
 
 ### Besides Other Features :
-* There is error page 404 route.
+
 * Our website is safe for users. As there is `logIn` & `registration section`. User Data will be saved.
 
 
